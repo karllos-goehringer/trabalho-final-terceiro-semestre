@@ -1,0 +1,25 @@
+  .login {
+    color: #555;
+    padding: 8px 16px;
+  }
+  
+  .signup {
+    background-color: #3A4556;
+    color: rgba(255, 255, 255, 0.897);
+    padding: 8px 16px;
+    border-radius: 20px;
+    font-size: 14px;
+    font-weight: 600;
+    margin-top: 30px;
+    text-decoration: none;
+  }
+
+  .default {
+    color: rgba(255, 255, 255, 0.897);
+    font-weight: 600;
+    font-size: 16px;
+    margin-left: 10px;
+    text-decoration: none;
+    
+  }
+  

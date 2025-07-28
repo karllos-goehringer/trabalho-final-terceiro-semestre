@@ -1,0 +1,40 @@
+.boxResultado {
+    display: flex;
+    flex-direction: row;
+    align-items: start;
+    gap: 1rem; 
+    width: 100%;
+    text-decoration: none; 
+    color: inherit;
+    padding: 10px;
+    margin-top: 5px;
+    margin-left: 5px;
+}
+
+.imagemResultado {
+    width: 60px;
+    height: 60px;
+    object-fit: cover; 
+    border: white 2px solid;
+}
+
+.nomeResultado {
+    font-size: 1rem;
+    font-weight: bold;
+}
+.boxResultado:hover {
+    background-color: #2F3E53;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    border: yellow 2px solid;
+
+}
+.linkResultado{
+    margin-bottom: 0px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: 100%;
+    text-decoration: none; 
+    color: inherit;
+}

@@ -1,0 +1,63 @@
+.headerbox{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100vh;
+    min-width: 14vw;
+    max-width: 14vw;
+    background-color: #3A4556;
+    margin-left: 18vw;
+    justify-content: space-between;
+}
+.headerbtn{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+.buttonbox {
+  display: flex;
+  align-items: center;
+  justify-items: center;   
+     
+}
+.buttonbox:hover {
+  background-color: #2f3e53;
+  cursor: pointer;
+    border-left: #f0f0f0 4px solid;
+}
+.buttonbox a {
+    text-decoration: none;
+    color: white;
+    padding:1rem;
+}
+.patch{
+    width: 100%;
+    padding: 2vh;
+    margin-bottom: 3vh;
+    border: #2D3848 2px solid;
+}
+.patch a{
+    display: flex;
+    justify-content: center;
+    text-decoration: none;
+    color: white;
+    padding:1rem;
+}
+.logo{
+    width: 100%;
+    padding: 2vh;
+    margin-bottom: 3vh;
+    
+}
+.boxPatch{
+    align-items: center;
+}
+a{
+    text-decoration: none;
+}
+link:hover a{
+    cursor:pointer;
+    text-decoration: underline;
+    text-decoration-color: white;
+    text-decoration-thickness: 1px;
+}

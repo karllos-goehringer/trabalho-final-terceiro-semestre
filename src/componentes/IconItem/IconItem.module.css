@@ -1,0 +1,40 @@
+.imagem:hover{
+    cursor:pointer;
+    border: 0.2rem solid #39495c;
+}
+.imagem {
+    width: 100px;
+    max-width: 5vh;
+    margin-left: 0.2rem;
+    border: 0.1rem solid white;
+}
+.wrapperImagem {
+  position: relative;
+  display: inline-block;
+}
+
+.wrapperImagem:hover .tooltip {
+  visibility: visible;
+  opacity: 1;
+}
+
+.tooltip {
+  position: absolute;
+  bottom: 110%;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #071522;
+  color: white;
+  padding: 6px 50px;
+  border-radius: 6px;
+  box-shadow: 0 0 6px rgba(0, 0, 0, 0.3);
+  font-size: 0.75rem;
+  white-space: nowrap;
+  z-index: 3;
+  visibility: hidden;
+  opacity: 0;
+  transition: opacity 0.2s ease;
+  max-width: auto;
+  width: auto;
+  border: #FCFBDD solid 3px;
+}

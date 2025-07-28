@@ -1,0 +1,31 @@
+body{
+    margin: 0;
+    padding: 0;
+    background-image: url('https://a-static.besthdwallpaper.com/league-of-legends-howling-abyss-wallpaper-2160x1440-98455_40.jpg');
+    background-size: cover;                 
+    background-position: center;            
+    background-repeat: no-repeat;            
+    background-attachment: fixed;            
+    font-family: sans-serif;
+    display:flex;
+    flex-direction: row;
+}
+.pagina{
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+}
+.box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #2D3848;
+    max-width: 52vw;
+    justify-items: start;
+    padding-bottom: 2%;
+    max-height: 100vh;
+    height: 100vh;
+    width: 50vw;
+    padding-left: 2rem;
+    padding-right: 2rem;
+}

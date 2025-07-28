@@ -1,0 +1,17 @@
+
+.imagem:hover{
+    cursor:pointer;
+    border: 0.2rem solid #39495c;
+}
+.boxListaIcones {
+    display: flex;
+    max-width: 100vh;
+    width: 100vh;
+    flex-direction: row;
+    flex-wrap: wrap;
+    padding: 1rem;
+    overflow: auto;
+}
+.boxListaIcones a {
+    max-width: 50px;
+}
