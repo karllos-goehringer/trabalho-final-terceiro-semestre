@@ -10,6 +10,9 @@ import PaginaCampeoes from './paginas/campeoes/campeoes';
 import PaginaCampeao from './paginas/pagina-campeao/pagina-campeao';
 import DefaultPage from './paginas/default/default';
 import PaginaPesquisa from './paginas/pagina-pesquisa/Pagina-pesquisa';
+import PaginaRuna from './paginas/pagina-runa/Pagina-runa';
+import GalleryRunas from './componentes/GalleryRunas/GalleryRunas';
+import ListaRunas from './paginas/runas/lista-runas';
 
 function App() {
   useEffect(() => {
@@ -24,6 +27,8 @@ function App() {
         <Route path="/campeoes" element={<PaginaCampeoes/>}/>
         <Route path="/pagina-campeao/:id" element={<PaginaCampeao/>}/>
         <Route path="/pagina-pesquisa/:id" element={<PaginaPesquisa/>}/>
+        <Route path="/pagina-runa/:id" element={<PaginaRuna/>}/>
+        <Route path="/pagina-runa" element={<ListaRunas/>}/>
         <Route path="*" element={<DefaultPage />} />
       </Routes>
     </BrowserRouter>

@@ -1,0 +1,103 @@
+.colunaPrincipal {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #3A4556;
+  padding: 1rem;
+  gap: 1rem;
+}
+
+.titulo {
+  color: #fff;
+  font-size: 1.2rem;
+  margin-bottom: 0.5rem;
+}
+
+/* Runas grandes (primeiras 3) */
+.linhaRunaGrande {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.runaItemGrande {
+  width: 60px;
+  height: 60px;
+  background-color: #1a1a1d;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+    position: relative;
+
+}
+
+.imgRunaGrande {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  border-radius: 50%;
+  border: 2px solid #ff4d4d;
+}
+
+.linhaRuna {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.runaItem {
+  width: 42px;
+  height: 42px;
+  background-color: #1c1c1e;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.imgRuna {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  border-radius: 50%;
+  border: 1px solid #555;
+}
+.tooltip {
+  position: absolute;
+  bottom: 110%;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #071522;
+  color: white;
+  padding: 6px 50px;
+  border-radius: 6px;
+  box-shadow: 0 0 6px rgba(0, 0, 0, 0.3);
+  font-size: 0.75rem;
+  white-space: normal;
+  z-index: 3;
+  visibility: hidden;
+  opacity: 0;
+  transition: opacity 0.2s ease;
+  max-width: 500px; 
+  width: 30vw;
+  border: #FCFBDD solid 3px;
+}
+
+.runaItem:hover .tooltip {
+  visibility: visible;
+  opacity: 1;
+}
+.runaItem:hover{
+    cursor: pointer;
+}
+.runaItemGrande:hover .tooltip {
+  visibility: visible;
+  opacity: 1;
+}
+.runaItemGrande:hover{
+    cursor: pointer;
+}
+.mainBox{
+    padding: 1rem;
+}

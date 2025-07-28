@@ -24,7 +24,7 @@ export default class RepositorioInstanciados {
         }
     }
     static addVetRuna(runa: Runa) {
-         const jaExiste = RepositorioInstanciados.vetCampeoes.some(
+         const jaExiste = RepositorioInstanciados.vetRunas.some(
             (r) => r.id === runa.id
         );
         if (!jaExiste) {

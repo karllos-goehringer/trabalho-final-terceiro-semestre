@@ -43,7 +43,7 @@ function PatchComponente() {
                         <a>Itens</a>
                     </div>
                     </Link>
-                       <Link to="/">
+                       <Link to="/pagina-runa">
                     <div className={estilo.buttonbox} >
                         <GiStoneSphere size={22} style={{ marginLeft: '16px' }} color="#fff" />
                         <a>Runas</a>

@@ -45,7 +45,7 @@ export default function Home() {
                             <a>Arquivos do Projeto:</a>
                         <a className={estilo.diagrama}><FaProjectDiagram />   Diagrama de classes do Sistema: <Link  to='/'><text>Diagrama</text></Link></a> 
                         <a className={estilo.projeto}><FaGithub />   Repositório do Projeto: <Link  to='https://github.com/karllos-goehringer/trabalho-final-terceiro-semestre'><text>Repositório GitHub</text></Link></a>
-                        <a className={estilo.vercel}><IoLogoVercel />   Vercel: <Link  to='github.com/karllos-goehringer'><text>Página no Vercel</text></Link></a>
+                        <a className={estilo.vercel}><IoLogoVercel />   Vercel: <Link  to='https://trabalho-final-terceiro-semestre-zd.vercel.app/'><text>Página no Vercel</text></Link></a>
                         </div>
                     </div>
                 </div>

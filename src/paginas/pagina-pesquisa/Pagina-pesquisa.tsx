@@ -17,9 +17,9 @@ export default function PaginaPesquisa() {
     function performSearch(parametro: string | undefined): JSX.Element | JSX.Element[] {
         let itens = RepositorioInstanciados.getItensLol();
         let campeoes = RepositorioInstanciados.getCampeoes();
-
+        let runas = RepositorioInstanciados.getRunas();
         let vetResultados: JSX.Element[] = [];
-
+        console.log(runas)
         if (!parametro) {
             return <DefaultPage />; 
         }
@@ -31,6 +31,12 @@ export default function PaginaPesquisa() {
         campeoes.forEach((campeao) => {
             if (campeao.pesquisaPorNome(parametro)) {
                 vetResultados.push(<ResultadoPesquisa item={campeao} />);
+            }
+        });
+        runas.forEach((runa) => {
+            if (runa.pesquisaPorNome(parametro)) {
+                vetResultados.push(<ResultadoPesquisa item={runa} />);
+                console.log(runa);
             }
         });
         if (vetResultados.length === 0 ) {

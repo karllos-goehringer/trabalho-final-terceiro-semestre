@@ -4,11 +4,11 @@ import ControladorRepositorio from '../../classes/ControladorRepositorio';
 import Item from '../../classes/Item';
 import Runa from '../../classes/Runa';
 import estilo from './ResultadoPesquisa.module.css'
-import { Link } from 'react-router';
-interface GaleryPropsCampeoes {
+import { Link } from 'react-router-dom';
+interface GaleryPropsPesquisa {
     item: Campeao | Item | Runa;
 }
-export default function ResultadoPesquisa({item}: GaleryPropsCampeoes) {
+export default function ResultadoPesquisa({item}: GaleryPropsPesquisa) {
    const [urlImagem, setUrlImagem] = useState<string>("");
 
     useEffect(() => {
@@ -20,8 +20,11 @@ export default function ResultadoPesquisa({item}: GaleryPropsCampeoes) {
                 requisicao = `https://ddragon.leagueoflegends.com/cdn/${patch}/img/champion/${item.icon}.png`;
             } else if (item instanceof Item) {
                 requisicao = `https://ddragon.leagueoflegends.com/cdn/${patch}/img/item/${item.imagem}`;
+            }else if ('caminho' in item) {
+                requisicao = `https://ddragon.leagueoflegends.com/cdn/img/${item.imagem}`;
+                console.log(item.imagem)
             }
-
+            console.log(requisicao);
             if (requisicao) setUrlImagem(requisicao);
         };
 
