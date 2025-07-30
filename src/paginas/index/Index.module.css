@@ -19,10 +19,10 @@ body{
     background-color: #2D3848;
     max-width: 50vw;
     justify-items: start;
-    padding-bottom: 16.8rem;
     max-height: 100vh;
     width: 50vw;
     height: 100vh;
+    overflow-y: auto;
 }
 .pinguEmote {
     width: 120px;
@@ -99,6 +99,7 @@ body{
   object-fit: cover;
   object-position: center top;
   margin-bottom: 0;
+  height: 10rem;
   min-height: 10rem;
   min-width: 40vw;
 }
@@ -135,8 +136,14 @@ text:hover{
 .titulo{
     font-size: 2rem;
 }
-.tituloLeague{
-    font-size: 6rem;
-    color: #F5EB2E;
-    margin-left: 0.5rem;
+
+.nnnn{
+    color: gray;
+    text-decoration: none;
+    font-size: 1.2rem;
+    
+}
+.nnnn:hover{
+    color: white;
+    text-decoration: underline solid white;
 }

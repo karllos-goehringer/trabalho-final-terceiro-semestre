@@ -5,7 +5,6 @@ export default class Runinha {
     private _nome: string;
     private _descCurta: string;
     private _descLonga: string;
-
     constructor(id: number,key: string,icon: string,nome: string,descCurta: string,descLonga: string) {
         this._id = id;
         this._key = key;

@@ -9,6 +9,7 @@ body{
     font-family: sans-serif;
     display:flex;
     flex-direction: row;
+
 }
 .pagina{
     display: flex;
@@ -43,4 +44,6 @@ body{
     width: 50vw;
     padding-left: 2rem;
     padding-right: 2rem;
+    overflow-y: auto;
+    overflow-x: hidden;
 }
