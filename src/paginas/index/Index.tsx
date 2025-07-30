@@ -43,9 +43,9 @@ export default function Home() {
                         <a className={estilo.textoCentral}>Este projeto foi desenvolvido como Projeto final das matérias de Front-End II, POO II e Arquitetura de Software.</a>
                         <div className={estilo.linkExterior}>
                             <a>Arquivos do Projeto:</a>
-                            <a className={estilo.diagrama}><FaProjectDiagram />   Diagrama de classes do Sistema:   <a href="/public/diagrama.asta" download className={estilo.nnnn} title="Download Diagrama">
-                                Diagrama
-                            </a></a>
+                            <a className={estilo.diagrama}><FaProjectDiagram />   Diagrama de classes do Sistema:   <Link to="https://drive.google.com/file/d/11khUEFvRjGKGGj5amDucD9kLfUeySk19/view?usp=sharing"  className={estilo.nnnn} title="Download Diagrama">
+                                <text>Diagrama</text>
+                            </Link></a>
                             <a className={estilo.projeto}><FaGithub />   Repositório do Projeto: <Link to='https://github.com/karllos-goehringer/trabalho-final-terceiro-semestre'><text>Repositório GitHub</text></Link></a>
                             <a className={estilo.vercel}><IoLogoVercel />   Vercel: <Link to='https://trabalho-final-terceiro-semestre-zd.vercel.app/'><text>Página no Vercel</text></Link></a>
                         </div>
