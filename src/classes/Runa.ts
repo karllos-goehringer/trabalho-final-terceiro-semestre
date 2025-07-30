@@ -10,4 +10,5 @@ export default interface Runa{
     runas: Runinha[];
     pesquisaPorNome(nome: string): boolean;
     pesquisaPorId(id: number): boolean;
+    toString():string;
 }

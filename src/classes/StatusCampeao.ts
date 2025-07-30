@@ -41,24 +41,139 @@ export default class StatusCampeao {
         this._attackspeedPorLv = attackspeedPorLv;
         this._attackspeed = attackspeed;
     }
-    get vida() { return this._vida; };
-    get vidaPorLv() { return this._vidaPorLv; };
-    get mana() { return this._mana; };
-    get manaPorLv() { return this._manaPorLv; };
-    get velocMovimento() { return this._velocMovimento; };
-    get armadura() { return this._armadura; };
-    get armaduraPorLv() { return this._armaduraPorLv; };
-    get spellblock() { return this._spellblock; };
-    get spellblockPorLv() { return this._spellblockPorLv; };
-    get alcanceAtck() { return this._alcanceAtck; };
-    get hpregen() { return this._hpregen; };
-    get hpregenPorLv() { return this._hpregenPorLv; };
-    get mpregen() { return this._mpregen; };
-    get mpregenPorLv() { return this._mpregenPorLv; };
-    get crit() { return this._crit; };
-    get critPorLv() { return this._critPorLv; };
-    get attackdamage() { return this._attackdamage; };
-    get attackdamagePorLv() { return this._attackdamagePorLv; };
-    get attackspeedPorLv() { return this._attackspeedPorLv; };
-    get attackspeed() { return this._attackspeed; };
+    public get vida() {
+        return this._vida;
+    };
+    public get vidaPorLv() {
+        return this._vidaPorLv;
+    };
+    public get mana() {
+        return this._mana;
+    };
+    public get manaPorLv() {
+        return this._manaPorLv;
+    };
+    public get velocMovimento() {
+        return this._velocMovimento;
+    };
+    public get armadura() {
+        return this._armadura;
+    };
+    public get armaduraPorLv() {
+        return this._armaduraPorLv;
+    };
+    public get spellblock() {
+        return this._spellblock;
+    };
+    public get spellblockPorLv() {
+        return this._spellblockPorLv;
+    };
+    public get alcanceAtck() {
+        return this._alcanceAtck;
+    };
+    public get hpregen() {
+        return this._hpregen;
+    };
+    public get hpregenPorLv() {
+        return this._hpregenPorLv;
+    };
+    public get mpregen() {
+        return this._mpregen;
+    };
+    public get mpregenPorLv() {
+        return this._mpregenPorLv;
+    };
+    public get crit() {
+        return this._crit;
+    };
+    public get critPorLv() {
+        return this._critPorLv;
+    };
+    public get attackdamage() {
+        return this._attackdamage;
+    };
+    public get attackdamagePorLv() {
+        return this._attackdamagePorLv;
+    };
+    public get attackspeedPorLv() {
+        return this._attackspeedPorLv;
+    };
+    public get attackspeed() {
+        return this._attackspeed;
+    };
+    public set attackspeed(valor: number) {
+        this._attackspeed = valor;
+    }
+    public set attackspeedPorLv(valor: number) {
+        this._attackspeedPorLv = valor;
+    }
+    public set attackdamagePorLv(valor: number) {
+        this._attackdamagePorLv = valor;
+    }
+    public set attackdamage(valor: number) {
+        this._attackdamage = valor;
+    }
+    public set critPorLv(valor: number) {
+        this._critPorLv = valor;
+    }
+    public set crit(valor: number) {
+        this._crit = valor;
+    }
+    public set mpregenPorLv(valor: number) {
+        this._mpregenPorLv = valor;
+    }
+    public set mpregen(valor: number) {
+        this._mpregen = valor;
+    }
+    public set hpregenPorLv(valor: number) {
+        this._hpregenPorLv = valor;
+    }
+    public set hpregen(valor: number) {
+        this._hpregen = valor;
+    }
+    public set alcanceAtck(valor: number) {
+        this._alcanceAtck = valor;
+    }
+    public set spellblockPorLv(valor: number) {
+        this._spellblockPorLv = valor;
+    }
+    public set spellblock(valor: number) {
+        this._spellblock = valor;
+    }
+    public set armaduraPorLv(valor: number) {
+        this._armaduraPorLv = valor;
+    }
+    public set armadura(valor: number) {
+        this._armadura = valor;
+    }
+    public set velocMovimento(valor: number) {
+        this._velocMovimento = valor;
+    }
+    public set manaPorLv(valor: number) {
+        this._manaPorLv = valor;
+    }
+    public set mana(valor: number) {
+        this._mana = valor;
+    }
+    public set vidaPorLv(valor: number) {
+        this._vidaPorLv = valor;
+    }
+    public set vida(valor: number) {
+        this._vida = valor;
+    }
+    toString(): string {
+        return `\n
+        \nStatus do Campeão:
+                \nVida: ${this._vida}, Mana: ${this._mana}, 
+                \nVelocidade de Movimento: ${this._velocMovimento}, 
+                \nArmadura: ${this._armadura}, 
+                \nResistência Mágica: ${this._spellblock}, 
+                \nAlcance de Ataque: ${this._alcanceAtck}, 
+                \nRegeneração de Vida: ${this._hpregen}, 
+                \nRegeneração de Mana: ${this._mpregen}, 
+                \nCrítico: ${this._crit}, 
+                \nDano de Ataque: ${this._attackdamage}, 
+                \nVelocidade de Ataque: ${this._attackspeed}
+                \n\n`;
+    }
 }

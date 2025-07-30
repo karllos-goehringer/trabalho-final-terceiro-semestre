@@ -18,28 +18,40 @@ export default class HabilidadeCampeao implements IHabilidade {
         this._alcance = alcance;
         this._icone = icone;
     }
-    get id(): string {
+    public get id(): string {
         return this._id;
     }
-    get nome(): string {
+    public get nome(): string {
         return this._nome;
     }
-    get descricao(): string {
+    public get descricao(): string {
         return this._descricao;
     }
-    get tooltip(): string {
+    public get tooltip(): string {
         return this._tooltip;
     }
-    get cooldown(): number[] {
+    public get cooldown(): number[] {
         return this._cooldown;
     }
-    get custo(): number[] {
+    public get custo(): number[] {
         return this._custo;
     }
-    get alcance(): number[] {
+    public get alcance(): number[] {
         return this._alcance;
     }
-    get icone(): string {
+    public get icone(): string {
         return this._icone;
+    }
+    toString(): string {
+        return `
+        \nHabilidade do Campeão:
+        \n  ID: ${this._id},
+        \n  Nome: ${this._nome},
+        \n  Descrição: ${this._descricao},
+        \n  Tooltip: ${this._tooltip},
+        \n  Cooldown: ${this._cooldown.join(", ")},
+        \n  Custo: ${this._custo.join(", ")},
+        \n  Alcance: ${this._alcance.join(", ")},
+        \n  Ícone: ${this._icone}`;
     }
 }

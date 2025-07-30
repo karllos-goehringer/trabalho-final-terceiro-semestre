@@ -5,7 +5,7 @@ export default class Runinha {
     private _nome: string;
     private _descCurta: string;
     private _descLonga: string;
-    constructor(id: number,key: string,icon: string,nome: string,descCurta: string,descLonga: string) {
+    constructor(id: number, key: string, icon: string, nome: string, descCurta: string, descLonga: string) {
         this._id = id;
         this._key = key;
         this._icon = icon;
@@ -13,27 +13,50 @@ export default class Runinha {
         this._descCurta = descCurta;
         this._descLonga = descLonga;
     }
-    get id(): number {
+    public get id(): number {
         return this._id;
     }
-
-    get key(): string {
+    public get key(): string {
         return this._key;
     }
-
-    get icon(): string {
+    public get icon(): string {
         return this._icon;
     }
-
-    get name(): string {
+    public get name(): string {
         return this._nome;
     }
-
-    get shortDesc(): string {
+    public get shortDesc(): string {
         return this._descCurta;
     }
-
-    get longDesc(): string {
+    public get longDesc(): string {
         return this._descLonga;
+    }
+    public set id(valor: number) {
+        this._id = valor;
+    }
+    public set key(valor: string) {
+        this._key = valor;
+    }
+    public set icon(valor: string) {
+        this._icon = valor;
+    }
+    public set nome(valor: string) {
+        this._nome = valor;
+    }
+    public set descCurta(valor: string) {
+        this._descCurta = valor;
+    }
+    public set descLonga(valor: string) {
+        this._descLonga = valor;
+    }
+    toString(): string {
+        return `
+        \nRuna menor:
+        \nID: ${this._id},
+        \nKey: ${this._key},
+        \nIcon: ${this._icon},
+        \nNome: ${this._nome},
+        \nDescrição Curta: ${this._descCurta},
+        \nDescrição Longa: ${this._descLonga}`;
     }
 }

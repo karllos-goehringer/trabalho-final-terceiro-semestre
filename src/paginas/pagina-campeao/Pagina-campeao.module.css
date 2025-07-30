@@ -9,6 +9,8 @@ body{
     font-family: sans-serif;
     display:flex;
     flex-direction: row;
+    max-height: 100vh;
+    overflow: hidden;
 }
 .pagina{
     display: flex;
@@ -21,8 +23,6 @@ body{
     align-items: center;
     background-color: #2D3848;
     max-width: 50vw;
-    justify-items: start;
-    padding-bottom: 16.8rem;
     max-height: 100vh;
     height: 100vh;
     width: 50vw;

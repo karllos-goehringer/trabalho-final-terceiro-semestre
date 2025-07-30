@@ -54,7 +54,6 @@ export default class RepositorioInstanciados {
         }
         return vetItensAram;
     }
-
     static getItensArena(): Item[] {
         var vetItensArena: Item[] = [];
         for (let i = 0; i < RepositorioInstanciados.vetItensLol.length; i++) {
@@ -65,7 +64,6 @@ export default class RepositorioInstanciados {
         }
         return vetItensArena;
     }
-
     static getCampeoes(): Campeao[] {
         return [...this.vetCampeoes]
     }

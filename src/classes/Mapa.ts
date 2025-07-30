@@ -7,12 +7,18 @@ export default class Mapa{
         this._id = id;
     }
 
-    get nome(): string {
+    public get nome(): string {
         return this._nome;
     }
 
-    get id(): number {
+    public get id(): number {
         return this._id;
+    }
+    public set nome(valor: string) {
+        this._nome = valor;
+    }
+    public set id(valor: number) {
+        this._id = valor;
     }
     static construirMapas(mapasData: { [id: number]: boolean }): Mapa[] {
         const nomesMapas: { [id: number]: string } = {
@@ -33,5 +39,10 @@ export default class Mapa{
             }
         }
         return mapasConstruidos;
+    }
+    toString(): string {
+        return `
+        \nMapa: ${this._nome}, 
+        \nID: ${this._id}`;
     }
 }

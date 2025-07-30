@@ -10,15 +10,31 @@ export default class Gold{
         this._sell = sell;
     }
 
-    get base(): number {
+    public get base(): number {
         return this._base;
     }
 
-    get total(): number {
+    public get total(): number {
         return this._total;
     }
 
-    get sell(): number {
+    public get sell(): number {
         return this._sell;
+    }
+    public set base(valor: number) {
+        this._base = valor;
+    }
+    public set total(valor: number) {
+        this._total = valor;
+    }
+    public set sell(valor: number) {
+        this._sell = valor;
+    }
+    toString(): string {
+        return `
+        \nInformações de Ouro:
+        \nBase: ${this._base}, 
+        \nTotal: ${this._total}, 
+        \nSell: ${this._sell}`;
     }
 }
