@@ -10,7 +10,7 @@ Este projeto foi desenvolvido como Projeto Final integrando as disciplinas:
 
 🛠️ Tecnologias e API
 
-    Uso das ferramentas React, Typescript , React-router e  React-icons
+    Uso das Tecnologias React, Typescript , React-router e  React-icons
 
     A aplicação consome dados da API Data Dragon, fornecida pela Riot Games Developer Portal.
 
@@ -20,6 +20,5 @@ Este projeto foi desenvolvido como Projeto Final integrando as disciplinas:
 
 🌐 Links
 
-    🔗 Deploy Vercel: [Inserir link aqui]
+    🔗 Deploy Vercel: https://trabalho-final-terceiro-semestre-ln8sagftw.vercel.app/
 
-    📁 Repositório GitHub: [Inserir link aqui]
