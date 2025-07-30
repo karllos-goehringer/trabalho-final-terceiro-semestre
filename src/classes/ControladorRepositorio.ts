@@ -20,6 +20,9 @@ export default class ControladorRepositorio {
       .then(res => res.json()).then(versoes => versoes[0]);
     return (versao)
   }
+  static limparTagsHTML(texto:string): string {
+  return texto.replace(/<[^>]+>/g, '');
+}
   static async criarRepositorioItens() {
     const versao = await ControladorRepositorio.getPatch();
     const urlItens = `https://ddragon.leagueoflegends.com/cdn/${versao}/data/pt_BR/item.json`;
@@ -29,8 +32,7 @@ export default class ControladorRepositorio {
     let objectMapa: Mapa[];
     objectMapa = []
     itensArray.forEach((item: any) => {
-
-      item.description = item.description.replace(/<[^>]*>/g, ' ');
+      item.description = ControladorRepositorio.limparTagsHTML(item.description);
       if (item.description !== '') {
         const jaExiste = vetItensLol.some(i => i.nome === item.name);
         if (!jaExiste) {
@@ -92,14 +94,17 @@ export default class ControladorRepositorio {
 
       for (const slot of caminho.slots) {
         for (const runa of slot.runes) {
+          let descCurta = ControladorRepositorio.limparTagsHTML(runa.shortDesc);
+          let descLonga = ControladorRepositorio.limparTagsHTML(runa.longDesc);
+          
           runas.push(
             new Runinha(
               runa.id,
               runa.key,
               runa.icon,
               runa.name,
-              runa.shortDesc,
-              runa.longDesc
+              descCurta,
+              descLonga
             )
           );
         }
@@ -210,9 +215,10 @@ export default class ControladorRepositorio {
     const resposta = await fetch(url);
     const dados = await resposta.json();
     const passiva = dados.data[nomeCampeao].passive;
+    let descricao = ControladorRepositorio.limparTagsHTML(passiva.description);
     const passivaCampeao = new PassivaCampeao(
       passiva.name,
-      passiva.description,
+      descricao,
       `https://ddragon.leagueoflegends.com/cdn/${versao}/img/passive/${passiva.image.full}`
     );
     return (passivaCampeao)
@@ -224,10 +230,11 @@ export default class ControladorRepositorio {
     const spells = dados.data[nomeCampeao].spells;
 
     return spells.map((spell: any) => {
+      let descricao = ControladorRepositorio.limparTagsHTML(spell.description);
       return new HabilidadeCampeao(
         spell.id,
         spell.name,
-        spell.description,
+        descricao,
         spell.tooltip,
         spell.cooldown,
         spell.cost,

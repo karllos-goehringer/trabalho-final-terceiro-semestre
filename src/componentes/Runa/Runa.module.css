@@ -4,7 +4,7 @@
   align-items: center;
   background-color: #3A4556;
   padding: 1rem;
-  gap: 1rem;
+  gap: 1rem; 
 }
 
 .titulo {
@@ -13,7 +13,6 @@
   margin-bottom: 0.5rem;
 }
 
-/* Runas grandes (primeiras 3) */
 .linhaRunaGrande {
   display: flex;
   gap: 1rem;
@@ -37,7 +36,7 @@
   height: 100%;
   object-fit: contain;
   border-radius: 50%;
-  border: 2px solid #ff4d4d;
+  border: 2px solid #2D3848;
 }
 
 .linhaRuna {
@@ -62,6 +61,7 @@
   object-fit: contain;
   border-radius: 50%;
   border: 1px solid #555;
+  border: 2px solid #2D3848;
 }
 .tooltip {
   position: absolute;

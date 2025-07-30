@@ -4,7 +4,10 @@
     margin-top: 4rem;
     padding: 1rem;
     justify-content: center;
-    overflow-y: auto;
-    overflow-x: hidden;
     max-height: 100vh;
+    position: relative;
+    overflow: visible;
+    
 }
+    
+    
