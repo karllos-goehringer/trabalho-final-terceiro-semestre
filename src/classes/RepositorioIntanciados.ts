@@ -70,4 +70,16 @@ export default class RepositorioInstanciados {
     static getItensLol(): Item[] {
         return [...RepositorioInstanciados.vetItensLol];
     }
+    static deleteItemLol(id: number): void {
+        RepositorioInstanciados.vetItensLol = RepositorioInstanciados.vetItensLol.filter(item => item.id !== id);
+    }
+    static deleteCampeao(id: number): void {
+        RepositorioInstanciados.vetCampeoes = RepositorioInstanciados.vetCampeoes.filter(campeao => campeao.id !== id);
+    }
+    static deleteRuna(id: number): void {
+        RepositorioInstanciados.vetRunas = RepositorioInstanciados.vetRunas.filter(runa => runa.id !== id);
+    }
+    static deleteMapa(id: number): void {
+        RepositorioInstanciados.vetMapa = RepositorioInstanciados.vetMapa.filter(mapa => mapa.id !== id);
+    }
 }

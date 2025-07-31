@@ -29,8 +29,6 @@ export default class ControladorRepositorio {
     const itens = await fetch(urlItens).then(res => res.json());
     const itensArray = Object.values(itens.data);
     const vetItensLol = RepositorioInstanciados.getItensLol();
-    let objectMapa: Mapa[];
-    objectMapa = []
     itensArray.forEach((item: any) => {
       item.description = ControladorRepositorio.limparTagsHTML(item.description);
       if (item.description !== '') {
@@ -249,4 +247,6 @@ export default class ControladorRepositorio {
         .then(() => ControladorRepositorio.CriarRepositorioRunas()
         ));
   }
+  
+
 }
