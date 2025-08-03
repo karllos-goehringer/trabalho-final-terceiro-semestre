@@ -20,5 +20,5 @@ Este projeto foi desenvolvido como Projeto Final integrando as disciplinas:
 
 🌐 Links
 
-    🔗 Deploy Vercel: https://trabalho-final-terceiro-semestre-ln8sagftw.vercel.app/
+    🔗 Deploy Vercel: https://trabalho-final-terceiro-semestre-zd.vercel.app/
 
