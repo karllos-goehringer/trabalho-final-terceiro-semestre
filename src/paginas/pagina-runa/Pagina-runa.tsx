@@ -1,10 +1,6 @@
 import RepositorioInstanciados from "../../classes/RepositorioIntanciados";
 import HeaderVertical from "../../componentes/Header/Header";
-import Determinacao from '../../classes/Determinacao';
-import Dominacao from '../../classes/Dominacao';
-import Feiticaria from '../../classes/Feiticaria';
-import Inspiracao from '../../classes/Inspiracao';
-import Precisao from '../../classes/Precisao';
+import Runa from "../../classes/Runa";
 import estilo from './Pagina-runa.module.css'
 import { useEffect } from "react";
 import { useParams } from "react-router";
@@ -14,7 +10,7 @@ export default function PaginaRuna() {
     const { id } = useParams();
     const runa = (
         RepositorioInstanciados.getRunas().find(runa => String(runa.id) === id)
-    ) as Dominacao | Precisao | Feiticaria | Determinacao | Inspiracao;
+    ) as Runa;
     useEffect(() => {
         document.title = `League of Project - ${runa.nome}`;
     }, [runa]);

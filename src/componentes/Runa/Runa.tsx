@@ -1,11 +1,7 @@
-import Determinacao from '../../classes/Determinacao';
-import Dominacao from '../../classes/Dominacao';
-import Feiticaria from '../../classes/Feiticaria';
-import Inspiracao from '../../classes/Inspiracao';
-import Precisao from '../../classes/Precisao';
+import Runa from '../../classes/Runa'
 import estilo from './Runa.module.css';
 export interface RunaProps {
-    item: Dominacao | Precisao | Feiticaria | Determinacao | Inspiracao;
+    item: Runa
 }
 export default function RunaBox(item: RunaProps) {
     return (

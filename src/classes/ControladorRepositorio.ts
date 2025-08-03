@@ -9,20 +9,16 @@ import HabilidadeCampeao from './HabilidadeCampeao';
 import Campeao from './Campeao';
 import Runinha from './Runinhas';
 import Runa from './Runa';
-import Dominacao from './Dominacao';
-import Precisao from './Precisao';
-import Feiticaria from './Feiticaria';
-import Determinacao from './Determinacao';
-import Inspiracao from './Inspiracao';
+
 export default class ControladorRepositorio {
   static async getPatch() {
     const versao = await fetch('https://ddragon.leagueoflegends.com/api/versions.json')
       .then(res => res.json()).then(versoes => versoes[0]);
     return (versao)
   }
-  static limparTagsHTML(texto:string): string {
-  return texto.replace(/<[^>]+>/g, '');
-}
+  static limparTagsHTML(texto: string): string {
+    return texto.replace(/<[^>]+>/g, '');
+  }
   static async criarRepositorioItens() {
     const versao = await ControladorRepositorio.getPatch();
     const urlItens = `https://ddragon.leagueoflegends.com/cdn/${versao}/data/pt_BR/item.json`;
@@ -94,7 +90,6 @@ export default class ControladorRepositorio {
         for (const runa of slot.runes) {
           let descCurta = ControladorRepositorio.limparTagsHTML(runa.shortDesc);
           let descLonga = ControladorRepositorio.limparTagsHTML(runa.longDesc);
-          
           runas.push(
             new Runinha(
               runa.id,
@@ -107,73 +102,16 @@ export default class ControladorRepositorio {
           );
         }
       }
-      let instancia: Runa;
+      const instancia: Runa = new Runa(caminho.id,
+        caminho.name,
+        "",
+        caminho.icon,
+        "Primária",
+        caminho.key,
+        runas
+      );
 
-      switch (caminho.key) {
-        case "Domination":
-          instancia = new Dominacao(
-            caminho.id,
-            caminho.name,
-            "",
-            caminho.icon,
-            "Primária",
-            caminho.key,
-            runas
-          );
-          break;
 
-        case "Precision":
-          instancia = new Precisao(
-            caminho.id,
-            caminho.name,
-            "",
-            caminho.icon,
-            "Primária",
-            caminho.key,
-            runas
-          );
-          break;
-
-        case "Sorcery":
-          instancia = new Feiticaria(
-            caminho.id,
-            caminho.name,
-            "",
-            caminho.icon,
-            "Primária",
-            caminho.key,
-            runas
-          );
-          break;
-
-        case "Resolve":
-          instancia = new Determinacao(
-            caminho.id,
-            caminho.name,
-            "",
-            caminho.icon,
-            "Primária",
-            caminho.key,
-            runas
-          );
-          break;
-
-        case "Inspiration":
-          instancia = new Inspiracao(
-            caminho.id,
-            caminho.name,
-            "",
-            caminho.icon,
-            "Primária",
-            caminho.key,
-            runas
-          );
-          break;
-
-        default:
-          console.warn(`Caminho de runa desconhecido: ${caminho.key}`);
-          continue;
-      }
       RepositorioInstanciados.addVetRuna(instancia);
     }
 
@@ -233,11 +171,11 @@ export default class ControladorRepositorio {
         spell.id,
         spell.name,
         descricao,
+        `https://ddragon.leagueoflegends.com/cdn/${versao}/img/spell/${spell.image.full}`,
         spell.tooltip,
         spell.cooldown,
         spell.cost,
         spell.range,
-        `https://ddragon.leagueoflegends.com/cdn/${versao}/img/spell/${spell.image.full}`
       );
     });
   }
@@ -247,6 +185,6 @@ export default class ControladorRepositorio {
         .then(() => ControladorRepositorio.CriarRepositorioRunas()
         ));
   }
-  
+
 
 }

@@ -1,41 +1,16 @@
-import IHabilidade from "./IHabilidade";
+import Habilidade from "./Habilidade";
 
-export default class PassivaCampeao implements IHabilidade{
-  private _nome: string;
-  private _descricao: string;
-  private _icone: string;
-
+export default class PassivaCampeao extends Habilidade {
   constructor(nome: string, descricao: string, icone: string) {
-    this._nome = nome;
-    this._descricao = descricao;
-    this._icone = icone;
+    super(nome, descricao, icone); // obrigatório
   }
 
-  public get nome(): string {
-    return this._nome;
-  }
-
-  public get descricao(): string {
-    return this._descricao;
-  }
-
-  public get icone(): string {
-    return this._icone;
-  }
-  public set nome(valor: string) {
-    this._nome = valor;
-  }
-  public set descricao(valor: string) {
-    this._descricao = valor;
-  }
-  public set icone(valor: string) {
-    this._icone = valor;
-  } 
   toString(): string {
     return `
-    \nPassiva do Campeão:
-    \n  Nome: ${this._nome},
-    \n  Descrição: ${this._descricao},
-    \n  Ícone: ${this._icone}`;
+            Passiva do Campeão:
+              Nome: ${this.nome}
+              Descrição: ${this.descricao}
+              Ícone: ${this.icone}`;
+
   }
 }

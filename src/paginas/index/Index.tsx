@@ -43,7 +43,7 @@ export default function Home() {
                         <a className={estilo.textoCentral}>Este projeto foi desenvolvido como Projeto final das matérias de Front-End II, POO II e Arquitetura de Software.</a>
                         <div className={estilo.linkExterior}>
                             <a>Arquivos do Projeto:</a>
-                            <a className={estilo.diagrama}><FaProjectDiagram />   Diagrama de classes do Sistema:   <Link to="https://drive.google.com/file/d/11khUEFvRjGKGGj5amDucD9kLfUeySk19/view?usp=sharing"  className={estilo.nnnn} title="Download Diagrama">
+                            <a className={estilo.diagrama}><FaProjectDiagram />   Diagrama de classes do Sistema:   <Link to="https://drive.google.com/file/d/1fukWlZoxksHUiSuvs8Q9sayPNzKwWAc8/view?usp=sharing"  className={estilo.nnnn} title="Download Diagrama">
                                 <text>Diagrama</text>
                             </Link></a>
                             <a className={estilo.projeto}><FaGithub />   Repositório do Projeto: <Link to='https://github.com/karllos-goehringer/trabalho-final-terceiro-semestre'><text>Repositório GitHub</text></Link></a>
@@ -52,7 +52,6 @@ export default function Home() {
                     </div>
                 </div>
             </div>
-
         </>
     );
 }
