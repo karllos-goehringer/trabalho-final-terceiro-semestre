@@ -1,0 +1,12 @@
+.GalleryFeiticos {
+  display: flex;
+  flex-direction: row;
+  background-color: #2D3848; 
+  flex-wrap: wrap;
+  border-radius: 12px;
+  max-width: 40vw;
+  gap: 0.9rem;
+  justify-content: center;
+  overflow: auto;
+
+}

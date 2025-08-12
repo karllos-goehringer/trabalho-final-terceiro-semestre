@@ -7,17 +7,19 @@ import { useEffect, useState } from 'react';
 import ControladorRepositorio from '../../classes/ControladorRepositorio';
 import { Link } from 'react-router';
 import { GiStoneSphere } from "react-icons/gi";
+import { IoBook } from "react-icons/io5";
+
 export default function HeaderVertical() {
-function PatchComponente() {
-  const [patch, setPatch] = useState("");
-  useEffect(() => {
-    async function carregarVersao() {
-      const versao = await ControladorRepositorio.getPatch();
-      setPatch(versao);
-    }carregarVersao();
-  });
-  return <a>{patch}</a>;
-}
+    function PatchComponente() {
+        const [patch, setPatch] = useState("");
+        useEffect(() => {
+            async function carregarVersao() {
+                const versao = await ControladorRepositorio.getPatch();
+                setPatch(versao);
+            } carregarVersao();
+        });
+        return <a>{patch}</a>;
+    }
     return (
         <>
             <div className={estilo.headerbox}>
@@ -32,26 +34,32 @@ function PatchComponente() {
                         </div>
                     </Link>
                     <Link to="/campeoes">
-                    <div className={estilo.buttonbox}>
-                        <HiUserGroup  size={22} style={{ marginLeft: '16px' }} color="#fff"/>
-                        <a>Campeões</a>
-                    </div>
+                        <div className={estilo.buttonbox}>
+                            <HiUserGroup size={22} style={{ marginLeft: '16px' }} color="#fff" />
+                            <a>Campeões</a>
+                        </div>
                     </Link>
                     <Link to="/lista-de-itens">
-                    <div className={estilo.buttonbox} >
-                        <RiSwordFill  size={22} style={{ marginLeft: '16px' }} color="#fff"/>
-                        <a>Itens</a>
-                    </div>
+                        <div className={estilo.buttonbox} >
+                            <RiSwordFill size={22} style={{ marginLeft: '16px' }} color="#fff" />
+                            <a>Itens</a>
+                        </div>
                     </Link>
-                       <Link to="/pagina-runa">
-                    <div className={estilo.buttonbox} >
-                        <GiStoneSphere size={22} style={{ marginLeft: '16px' }} color="#fff" />
-                        <a>Runas</a>
-                    </div>
+                    <Link to="/pagina-runa">
+                        <div className={estilo.buttonbox} >
+                            <GiStoneSphere size={22} style={{ marginLeft: '16px' }} color="#fff" />
+                            <a>Runas</a>
+                        </div>
+                    </Link>
+                    <Link to="/pagina-feiticos">
+                        <div className={estilo.buttonbox} >
+                            <IoBook size={22} style={{ marginLeft: '16px' }} color="#fff" />
+                            <a>Feitiços</a>
+                        </div>
                     </Link>
                 </div>
                 <div className={estilo.patch}>
-                   <a className={estilo.boxPatch}>Patch Atual:{PatchComponente()}</a>
+                    <a className={estilo.boxPatch}>Patch Atual:{PatchComponente()}</a>
                 </div>
             </div>
         </>

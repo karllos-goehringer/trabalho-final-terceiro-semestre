@@ -5,8 +5,9 @@ import Item from '../../classes/Item';
 import Runa from '../../classes/Runa';
 import estilo from './ResultadoPesquisa.module.css'
 import { Link } from 'react-router-dom';
+import Feitico from '../../classes/Feitico';
 interface GaleryPropsPesquisa {
-    item: Campeao | Item | Runa;
+    item: Campeao | Item | Runa | Feitico;
 }
 export default function ResultadoPesquisa({item}: GaleryPropsPesquisa) {
    const [urlImagem, setUrlImagem] = useState<string>("");
@@ -20,11 +21,11 @@ export default function ResultadoPesquisa({item}: GaleryPropsPesquisa) {
                 requisicao = `https://ddragon.leagueoflegends.com/cdn/${patch}/img/champion/${item.icon}.png`;
             } else if (item instanceof Item) {
                 requisicao = `https://ddragon.leagueoflegends.com/cdn/${patch}/img/item/${item.imagem}`;
-            }else if ('caminho' in item) {
+            }else if (item instanceof Feitico){
+                    requisicao = `https://ddragon.leagueoflegends.com/cdn/${patch}/img/spell/${item.imagem.full}`;
+            } else if ('caminho' in item) {
                 requisicao = `https://ddragon.leagueoflegends.com/cdn/img/${item.imagem}`;
-                console.log(item.imagem)
             }
-            console.log(requisicao);
             if (requisicao) setUrlImagem(requisicao);
         };
 
@@ -32,7 +33,7 @@ export default function ResultadoPesquisa({item}: GaleryPropsPesquisa) {
     }, [item]);
 
     return (
-        <Link to={`/pagina-${item instanceof Campeao ? 'campeao' : item instanceof Item ? 'item' : 'runa'}/${item.id}`} className={estilo.linkResultado}>
+        <Link to={`/pagina-${item instanceof Campeao ? 'campeao' : item instanceof Item ? item instanceof Runa? 'runa' : 'feiticos': 'feiticos' }/${item.id}`} className={estilo.linkResultado}>
            <div className={estilo.boxResultado}>
                 <img src={urlImagem} alt={item.nome} className={estilo.imagemResultado} />
                 <a className={estilo.nomeResultado}>{item.nome}</a>

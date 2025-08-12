@@ -30,7 +30,7 @@ export default function PaginaTabelaItens() {
                 <div className={estilo.topheader}>
                   <img src="https://i.namu.wiki/i/KyNBQgy7tO81X_JTrBQAeWjb2HvhyZ9WiJf8pTAcQH2RZLMFgWEc1PXcPrdswNoHILQUiNzsdhQh6wX0Ba7KLg.webp" width={'50px'} onClick={() => {setMapa('SRift')}}></img>
                   <img src="https://i.namu.wiki/i/s3ZbYxmu6AH-8UxGu1nWlZGP-mas9uGXDkav-BBLc5QxiUwfCZiRQ-ABRgnU33J5exDDsoHvpQthPgGwx8OM0Q.webp" width={'50px'} onClick={() => {setMapa('Aram')}}></img>
-                  <img src="https://i.namu.wiki/i/DaYen0OefYpKK2JcacdgnE2bTjiGFWqbDs7vtPwHgTqDAubbRqw8MZQVjrhyqgUgN6d_o3WWsS751vkyXJhMbw.webp" width={'50px'}onClick={() => {setMapa('Arena')}}></img>
+                  <img src="https://i.namu.wiki/i/DaYen0OefYpKK2JcacdgnE2bTjiGFWqbDs7vtPwHgTqDAubbRqw8MZQVjrhyqgUgN6d_o3WWsS751vkyXJhMbw.webp" width={'50px'} onClick={() => {setMapa('Arena')}}></img>
                 </div>
                 
               <GalleryItens itens={itens} />

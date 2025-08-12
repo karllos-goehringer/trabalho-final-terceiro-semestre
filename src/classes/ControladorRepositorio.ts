@@ -9,6 +9,8 @@ import HabilidadeCampeao from './HabilidadeCampeao';
 import Campeao from './Campeao';
 import Runinha from './Runinhas';
 import Runa from './Runa';
+import Feitico from './Feitico';
+import imagemFeitico from './imagemFeitico';
 
 export default class ControladorRepositorio {
   static async getPatch() {
@@ -19,6 +21,9 @@ export default class ControladorRepositorio {
   static limparTagsHTML(texto: string): string {
     return texto.replace(/<[^>]+>/g, '');
   }
+  static  limparPlaceholders(texto: string): string {
+  return texto.replace(/{{[^}]+}}/g, "").trim();
+}
   static async criarRepositorioItens() {
     const versao = await ControladorRepositorio.getPatch();
     const urlItens = `https://ddragon.leagueoflegends.com/cdn/${versao}/data/pt_BR/item.json`;
@@ -179,11 +184,35 @@ export default class ControladorRepositorio {
       );
     });
   }
+  static async CriarFeiticos(){
+    let versao:string = await ControladorRepositorio.getPatch();
+    const urlFeitico = `https://ddragon.leagueoflegends.com/cdn/${versao}/data/pt_BR/summoner.json`;
+    const feiticos = await fetch(urlFeitico).then(res => res.json());
+    const feiticosArray = Object.values(feiticos.data) as any[];
+    feiticosArray.forEach((spell) => {
+      let tooltipFormatado =  ControladorRepositorio.limparPlaceholders(spell.tooltip)
+      tooltipFormatado =  ControladorRepositorio.limparTagsHTML(tooltipFormatado)
+
+      let descricaoFormatada = ControladorRepositorio.limparTagsHTML(spell.description)
+      let imagem = new imagemFeitico (spell.image.full,spell.image.sprite)
+      let novoFeitico =  new Feitico(
+        spell.name,
+        spell.key,
+        imagem,
+        spell.costType,
+        descricaoFormatada,
+        tooltipFormatado
+      )
+      RepositorioInstanciados.addVetFeitico(novoFeitico);
+    })
+
+  }
   static async inicializarRepositorios() {
     return ControladorRepositorio.criarRepositorioItens()
       .then(() => ControladorRepositorio.CriarRepositorioCampeoes()
         .then(() => ControladorRepositorio.CriarRepositorioRunas()
-        ));
+        .then(() => ControladorRepositorio.CriarFeiticos()
+        )));
   }
 
 

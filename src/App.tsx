@@ -11,12 +11,14 @@ import PaginaCampeao from './paginas/pagina-campeao/pagina-campeao';
 import DefaultPage from './paginas/default/default';
 import PaginaPesquisa from './paginas/pagina-pesquisa/Pagina-pesquisa';
 import PaginaRuna from './paginas/pagina-runa/Pagina-runa';
-import GalleryRunas from './componentes/GalleryRunas/GalleryRunas';
 import ListaRunas from './paginas/runas/lista-runas';
-
+import PaginaFeiticos from './paginas/feiticos/pagina-feiticos';
+import RepositorioInstanciados from './classes/RepositorioIntanciados';
+import PaginaFeitico from './paginas/feitico/Pagina-feitico'
 function App() {
   useEffect(() => {
-      ControladorRepositorio.inicializarRepositorios(); 
+      ControladorRepositorio.inicializarRepositorios().then(() =>
+      console.log(RepositorioInstanciados.getFeiticos()));
     }, []);
   return (
     <BrowserRouter>
@@ -29,6 +31,9 @@ function App() {
         <Route path="/pagina-pesquisa/:id" element={<PaginaPesquisa/>}/>
         <Route path="/pagina-runa/:id" element={<PaginaRuna/>}/>
         <Route path="/pagina-runa" element={<ListaRunas/>}/>
+        <Route path="/pagina-feiticos" element={<PaginaFeiticos/>}/>
+        <Route path="/pagina-feiticos/:id" element={<PaginaFeitico/>}/>
+
         <Route path="*" element={<DefaultPage />} />
       </Routes>
     </BrowserRouter>

@@ -18,12 +18,17 @@ export default function PaginaPesquisa() {
         let itens = RepositorioInstanciados.getItensLol();
         let campeoes = RepositorioInstanciados.getCampeoes();
         let runas = RepositorioInstanciados.getRunas();
+        let feiticos = RepositorioInstanciados.getFeiticos();
         let vetResultados: JSX.Element[] = [];
-        console.log(runas)
         if (!parametro) {
             return <DefaultPage />; 
         }
         itens.forEach((item) => {
+            if (item.pesquisaPorNome(parametro)) {
+                vetResultados.push(<ResultadoPesquisa item={item} />);
+            }
+        });
+        feiticos.forEach((item) => {
             if (item.pesquisaPorNome(parametro)) {
                 vetResultados.push(<ResultadoPesquisa item={item} />);
             }

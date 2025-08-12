@@ -1,0 +1,63 @@
+.boxFeitico {
+  position: relative; /* para posicionar tooltip relativamente */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 220px;
+  gap: 5rem;
+  padding: 1rem;
+  background-color: #3A4556;
+  color: #f0f0f0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  text-align: center;
+  cursor: default;
+  transition: transform 0.2s ease-in-out;
+  border-radius: 1rem;
+}
+.boxFeitico:hover {
+  transform: translateY(-5px);
+}
+.boxFeitico img {
+  width: 80px;
+  height: 80px;
+  object-fit: contain;
+  margin-bottom: 0.6rem;
+  border-radius: 8px;
+  background-color: #2a2a3f;
+  padding: 8px;
+}
+.boxFeitico a {
+  margin: 0.3rem 0;
+  color: white;
+  font-weight: 600;
+  text-decoration: none;
+  font-size: 0.9rem;
+}
+.tooltip {
+  position: absolute;
+  bottom: 110%;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #071522;
+  color: white;
+  padding: 8px 12px;
+  border-radius: 6px;
+  box-shadow: 0 0 6px rgba(0,0,0,0.3);
+  font-size: 0.85rem;
+  z-index: 10;
+  visibility: hidden;
+  opacity: 0;
+  transition: opacity 0.2s ease;
+  pointer-events: none;
+  text-wrap: wrap;
+  width: max-content;
+  max-width: 350px;
+}
+.tooltip h2 {
+    font-size: 16px;
+}
+.boxFeitico:hover .tooltip {
+  visibility: visible;
+  opacity: 1;
+  pointer-events: auto;
+}

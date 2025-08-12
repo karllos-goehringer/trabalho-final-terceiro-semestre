@@ -1,4 +1,5 @@
 import Campeao from "./Campeao"
+import Feitico from "./Feitico";
 import Item from "./Item"
 import Mapa from "./Mapa"
 import Runa from "./Runa";
@@ -7,6 +8,7 @@ export default class RepositorioInstanciados {
     private static vetCampeoes: Campeao[] = [];
     private static vetRunas: Runa[] = [];
     private static vetMapa: Mapa[] = [];
+    private static vetFeiticos: Feitico[] = [];
     static addVetLol(item: Item) {
         RepositorioInstanciados.vetItensLol.push(item);
     }
@@ -31,8 +33,19 @@ export default class RepositorioInstanciados {
             RepositorioInstanciados.vetRunas.push(runa);
         }
     }
+    static addVetFeitico(feitico:Feitico){
+         const jaExiste = RepositorioInstanciados.vetFeiticos.some(
+            (r) => r.id === feitico.id
+        );
+        if (!jaExiste) {
+            RepositorioInstanciados.vetFeiticos.push(feitico);
+        }
+    }
     static getRunas(): Runa[] {
         return [...this.vetRunas];
+    }
+    static getFeiticos():Feitico[] {
+        return([...this.vetFeiticos])
     }
     static getItensSRift(): Item[] {
         var vetItensSRift: Item[] = [];
